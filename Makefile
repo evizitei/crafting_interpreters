@@ -1,6 +1,6 @@
 .PHONY: clean compile
 
-compile : build/Hello.class bin/c_hello
+compile : build/Hello.class bin/c_hello bin/jlox.jar
 
 clean :
 	rm -rf build
@@ -12,6 +12,11 @@ clean :
 
 bin/c_hello :
 	gcc src/hello_world.c -o bin/c_hello
+
+bin/jlox.jar :
+	javac src/com/craftinginterpreters/lox/*.java -d build
+	cd build && jar cfev jlox.jar com.craftinginterpreters.lox.Lox com
+	mv build/jlox.jar bin/jlox.jar
 
 build/Hello.class :
 	javac src/Hello.java -d build

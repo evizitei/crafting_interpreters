@@ -10,7 +10,7 @@ enum TokenType {
   //literals
   IDENTIFIER, STRING, NUMBER,
   //keywords
-  AND, CLASS, FALSE, FUN, FOR, IF, NIL, OR,
+  AND, CLASS, ELSE, FALSE, FUN, FOR, IF, NIL, OR,
   PRINT, RETURN, SUPER, THIS, TRUE, VAR, WHILE,
   EOF
 }
